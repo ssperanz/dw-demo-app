@@ -29,7 +29,7 @@ public class HelloWorldEndpointTest {
         String json = "{ \"id\": 1, \"content\": \"Hello, dropwizard!\" }";
 
         // The object responsible for translating json to our class
-        ObjectReader reader = resources.getObjectMapper().reader(Saying.class);
+        ObjectReader reader = resources.getObjectMapper().readerFor(Saying.class);
 
         // Deserialize our actual and expected responses
         Saying actual = reader.readValue(resp);
